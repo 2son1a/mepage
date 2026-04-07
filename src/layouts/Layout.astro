@@ -8,12 +8,13 @@ const {
   title = "Your Name — Developer & Designer",
   description = "Personal site of Your Name. Developer, designer, and maker of things.",
 } = Astro.props;
-
-import lavaTexture from "../../Lava_Texture_Item.jpg";
 ---
 
 <!doctype html>
-<html lang="en" style={`--body-bg-image: url(${lavaTexture.src});`}>
+<html
+  lang="en"
+  style="--body-bg-image: radial-gradient(circle at 20% 10%, rgba(29, 81, 102, 0.22), transparent 35%), radial-gradient(circle at 85% 20%, rgba(237, 116, 72, 0.14), transparent 40%);"
+>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
