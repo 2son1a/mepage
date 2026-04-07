@@ -1,0 +1,32 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Your Name — Developer & Designer",
+  description = "Personal site of Your Name. Developer, designer, and maker of things.",
+} = Astro.props;
+
+import lavaTexture from "../../Lava_Texture_Item.jpg";
+---
+
+<!doctype html>
+<html lang="en" style={`--body-bg-image: url(${lavaTexture.src});`}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  @import "../styles/global.css";
+</style>
