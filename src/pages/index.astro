@@ -1,22 +1,5 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import profileImage from "../../Frame 264.png";
-import wallpaperImage from "../../Frame 265 (1).png";
-import frameImage from "../../Frame 266.png";
-
-type PhotoModule = {
-  default: {
-    src: string;
-    width: number;
-    height: number;
-  };
-};
-
-const photoModules = import.meta.glob<PhotoModule>(
-  "../assets/pics/*.{png,jpg,jpeg,webp,avif,gif}",
-  { eager: true },
-);
-const photos = Object.values(photoModules).map((module) => module.default);
 
 const profile = {
   name: "Sofia Maria Lo Cicero Vaina",
@@ -27,504 +10,344 @@ const profile = {
     email: "mailto:s.lochichero@gmail.com",
   },
   interests:
-    "AI researcher focused on training dynamics and mechanistic interpretability, with hands-on experience across LLM finetuning, diffusion language models, and in-context learning.",
+    "Hi there! [taking-pictures]<br/>I have just finished a 9-month research internship at Together AI. Now I am looking for my next opportunity. I want it to be about understanding how things work — for example, mechanistic interpretability, training dynamics, or factual recall.",
   publications: [
     {
       authorship: "First author",
       title: "Mashup Learning: Faster Finetuning by Remixing Past Checkpoints",
       url: "https://arxiv.org/abs/2603.10156",
-      details: "2026, under review at ICML.",
+      details: "2026; under review at ",
+      venue: "ICML",
     },
     {
       authorship: "First author",
       title: "Diffusion Language Models Generation Can Be Halted Early",
       url: "https://arxiv.org/abs/2305.10818",
-      details: "2023.",
+      details: "2023",
     },
     {
       authorship: "Co-author",
       title:
         "Linear Transformers with Learnable Kernel Functions are Better In-Context Models",
       url: "https://arxiv.org/abs/2402.10644",
-      details: "ACL 2024.",
+      details: "",
+      venue: "ACL ",
+      venueYear: "2024",
     },
   ],
   experiences: [
     {
       role: "Research Scientist Intern",
       organization: "Together AI",
-      period: "Jul 2025 - Mar 2026",
-      details:
-        "Proposed Mashup Learning, showing 0.5-5 pp gains over scratch finetuning across 4 models and 8 benchmarks, with 41-46% fewer training steps and up to 37% lower wall-clock time.",
+      url: "https://www.together.ai/",
+      period: "Jul 2025 – Mar 2026",
+      details: [
+        "Proposed Mashup Learning, a method that selects and merges historical finetuning checkpoints to construct improved initializations for new tasks.",
+        "Demonstrated consistent accuracy gains of 0.5–5 pp over training from scratch across 4 models (Gemma-3 4B/1B, Gemma-2 2B, Mistral-7B), 8 benchmarks, and both LoRA and full finetuning setups.",
+        "Achieved 41–46% fewer training steps and up to 37% less wall-clock time to match from-scratch accuracy, including all selection and merging overhead.",
+        'First-authored paper submitted to ICML 2026; code available at <a href="https://github.com/2son1a/mashup-learning">GitHub</a>.',
+      ],
     },
     {
       role: "Research Fellow",
       organization: "Cambridge AI Safety Hub",
-      period: "Jan 2025 - Apr 2025",
-      details:
-        "Tested a circuit transplantation mechanistic interpretability proposal for training language models around circuits extracted from pretrained models.",
+      url: "https://www.cambridgeaisafety.org/",
+      period: "Jan 2025 – Apr 2025",
+      details: [
+        "Tested a circuit transplantation mechanistic interpretability proposal for training LLMs around specific circuits extracted from pretrained models.",
+      ],
     },
     {
       role: "Research Scientist Intern",
-      organization: "T-Bank (Tinkoff) and MIPT",
-      period: "May 2023 - Mar 2024",
-      details:
-        "First-authored work on diffusion language model generation speed and co-authored ACL 2024 work on learnable kernels for in-context learning; presented findings in 4 talks to audiences of 50-200.",
+      organization: "T-Bank (Tinkoff) & MIPT",
+      url: "https://en.wikipedia.org/wiki/T-Bank",
+      period: "May 2023 – Mar 2024",
+      details: [
+        "First-authored a paper identifying a design flaw in Diffusion Language Models that causes slower generation; co-authored a paper on State Space Models and in-context learning, published at ACL 2024.",
+        "Presented findings to audiences of 50–200 people on 4 occasions.",
+      ],
     },
     {
-      role: "Founder and CEO",
+      role: "Founder & CEO",
       organization: "Marker",
       subtitle: "An AI-powered Russian-language writing assistant",
-      period: "Sep 2021 - May 2023",
-      details:
-        "Raised $50k from private and institutional sources, led a 10-person team, and built an NLP writing-assistant MVP with product-market validation experiments.",
+      period: "Sep 2021 – May 2023",
+      details: [
+        "Raised $50,000 from a private investor, state grants, and a corporation.",
+        "Built and led a team of 10 engineers, designers, and marketers.",
+        "Developed an NLP-based MVP and validated product-market fit through user testing and acquisition experiments.",
+      ],
     },
     {
       role: "Research Scientist Intern",
       organization: "Sberbank",
-      period: "Apr 2021 - Jun 2021",
-      details:
-        "Implemented a GAN system to automate paraphrasing of gendered voice assistant phrases.",
+      url: "https://en.wikipedia.org/wiki/Sberbank",
+      period: "Apr 2021 – Jun 2021",
+      details: [
+        "Implemented a GAN to automate paraphrasing of gendered voice assistant phrases.",
+      ],
     },
   ],
   education: [
     {
-      institution: "Innopolis University (Kazan, Russia)",
-      period: "Sep 2020 - May 2024",
-      details: "Bachelor's in Computer Science, specialization in AI.",
+      institution: "Innopolis University",
+      url: "https://innopolis.university/en/",
+      location: "Kazan, Russia",
+      period: "Sep 2020 – May 2024",
+      details: "Bachelor's in Computer Science, specializing in <strong>AI</strong>.",
     },
   ],
   competitions: [
     {
-      period: "2020-2021",
+      period: "2020 – 2021",
       details:
-        "Technical hackathons: 4 top placements including 1st place in Leaders Of Digital final and SberCode, with $18,500 in prizes.",
+        '<strong>Technical Hackathons:</strong> <strong>4</strong> top placements including <strong>1st place</strong> in <em>Leaders Of Digital</em> final and <em>SberCode</em> competitions; <strong>$18,500</strong> in total prizes.',
     },
     {
-      period: "2019-2020",
+      period: "2019 – 2020",
       details:
-        "Mathematical olympiads: 1st and 2nd place in Crimea regional semi-finals of the Russian Mathematical Olympiad (top 0.5% among 500 participants).",
+        '<strong>Mathematical Olympiads:</strong> <strong>1st</strong> and <strong>2nd place</strong> in Crimea regional semi-finals of the <em>Russian Mathematical Olympiad</em>, top <strong>0.5%</strong> among 500 participants.',
     },
   ],
 };
+
 ---
 
-<Layout title={`${profile.name} - Homepage`}>
-  <div class="wallpaper" style={`--wallpaper-url: url('${wallpaperImage.src}')`}>
-    <div class="container page">
-      <header class="top">
+<Layout title={`${profile.name} - Notes`}>
+  <main class="note-shell">
+    <article class="note">
+      <header class="note-header">
         <h1>{profile.name}</h1>
+        <p class="profile-links">
+          <a href={profile.links.scholar}>Google Scholar</a>
+          <a href={profile.links.github}>GitHub</a>
+          <a href={profile.links.linkedin}>LinkedIn</a>
+          <a href={profile.links.email}>Email: s.lochichero@gmail.com</a>
+        </p>
+        <div class="intro-row">
+          <img src={`${import.meta.env.BASE_URL}profile.png`} alt={profile.name} class="profile-photo" />
+          <p class="interests" set:html={profile.interests.replace(/\[taking-pictures\]/g, `<img src="${import.meta.env.BASE_URL}taking-pictures.png" alt="taking pictures" class="inline-icon" />`)} />
+        </div>
       </header>
 
-      <nav class="sub-top" aria-label="Profile links">
-        <a href={profile.links.scholar} target="_blank" rel="noopener noreferrer">
-          Google Scholar
-        </a>
-        <a href={profile.links.github} target="_blank" rel="noopener noreferrer">
-          GitHub
-        </a>
-        <a href={profile.links.linkedin} target="_blank" rel="noopener noreferrer">
-          LinkedIn
-        </a>
-        <a href={profile.links.email}>Email</a>
-      </nav>
+      <section aria-labelledby="publications-heading">
+        <h2 id="publications-heading">Publications <a href={profile.links.scholar} class="heading-link">[Google Scholar]</a></h2>
+        <div class="entry-list publications">
+          {profile.publications.map((item) => (
+            <p>
+              <strong>{item.authorship}</strong>, <a href={item.url}><em>{item.title}</em></a>; {item.details}{item.venue && <><strong>{item.venue}</strong></>}{item.venueYear && <> {item.venueYear}</>}.
+            </p>
+          ))}
+        </div>
+      </section>
 
-      <main class="main">
-        <section class="profile">
-          <div class="left">
-            <img src={profileImage.src} alt={`Portrait of ${profile.name}`} />
-          </div>
-          <div class="right">
-            <h2>About me</h2>
-            <p>{profile.interests}</p>
-            <section class="collab" aria-labelledby="collab-heading">
-              <h3 id="collab-heading">Let's collaborate!</h3>
-              <p>
-                Open to research collaborations, internships, and thoughtful AI
-                projects. Feel free to reach out by email or connect on
-                LinkedIn.
-              </p>
-            </section>
-          </div>
-        </section>
-
-        <section class="experience" aria-labelledby="publications-heading">
-          <h2 id="publications-heading">Publications</h2>
-          <ul>
-            {profile.publications.map((item) => (
-              <li>
+      <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Experience</h2>
+        <div class="entry-list">
+          {profile.experiences.map((item) => (
+            <article class="entry-item">
+              <div class="entry-body">
                 <p>
-                  <strong>{item.authorship}</strong>, <a href={item.url}>{item.title}</a>;{" "}
-                  {item.details}
+                  {item.url ? <a href={item.url}><strong>{item.organization}</strong></a> : <strong>{item.organization}</strong>}, <em>{item.role}</em>
                 </p>
-              </li>
-            ))}
-          </ul>
-        </section>
+                {item.subtitle && <p class="subline">{item.subtitle}</p>}
+                <ul>
+                  {item.details.map((d) => (
+                    <li set:html={d} />
+                  ))}
+                </ul>
+              </div>
+              <span class="entry-date">{item.period}</span>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section class="experience" aria-labelledby="experience-heading">
-          <h2 id="experience-heading">Experience</h2>
-          <ul>
-            {profile.experiences.map((item) => (
-              <li>
-                <div class="row">
-                  <strong>{item.role}</strong>
-                  <span>{item.period}</span>
-                </div>
-                <div class="org">{item.organization}</div>
-                {item.subtitle && <div class="org-subtitle">{item.subtitle}</div>}
-                <p>{item.details}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Education</h2>
+        <div class="entry-list">
+          {profile.education.map((item) => (
+            <article class="entry-item">
+              <div class="entry-body">
+                <p>
+                  {item.url ? <a href={item.url}><strong>{item.institution}</strong></a> : <strong>{item.institution}</strong>}{item.location && <> ({item.location})</>}
+                </p>
+                <p set:html={item.details} />
+              </div>
+              <span class="entry-date">{item.period}</span>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section class="experience" aria-labelledby="education-heading">
-          <h2 id="education-heading">Education</h2>
-          <ul>
-            {profile.education.map((item) => (
-              <li>
-                <div class="row">
-                  <strong>{item.institution}</strong>
-                  <span>{item.period}</span>
-                </div>
-                <p>{item.details}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
+      <section aria-labelledby="competitions-heading">
+        <h2 id="competitions-heading">Competitions</h2>
+        <div class="entry-list">
+          {profile.competitions.map((item) => (
+            <article class="entry-item">
+              <div class="entry-body">
+                <p set:html={item.details} />
+              </div>
+              <span class="entry-date">{item.period}</span>
+            </article>
+          ))}
+        </div>
+      </section>
+    </article>
+  </main>
 
-        <section class="experience" aria-labelledby="competitions-heading">
-          <h2 id="competitions-heading">Competitions</h2>
-          <ul>
-            {profile.competitions.map((item) => (
-              <li>
-                <div class="row">
-                  <strong>{item.period}</strong>
-                </div>
-                <p>{item.details}</p>
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section class="framed-gallery" aria-label="Framed photo gallery">
-          <div
-            class="photo-frame"
-            style={`
-              --frame-width: ${frameImage.width};
-              --frame-height: ${frameImage.height};
-              --inner-x: 148;
-              --inner-y: 150;
-              --inner-w: 781;
-              --inner-h: 359;
-            `}
-          >
-            <div
-              class="photo-window"
-              aria-label="Photos inside decorative frame"
-              data-gallery
-              tabindex="0"
-            >
-              {
-                photos.length > 0 ? (
-                  photos.map((photo, index) => (
-                    <figure class={`photo-slide ${index === 0 ? "is-active" : ""}`}>
-                      <img
-                        src={photo.src}
-                        alt={`Framed photo ${index + 1}`}
-                        loading="lazy"
-                      />
-                    </figure>
-                  ))
-                ) : (
-                  <p class="empty-photos">
-                    Add images to <code>src/assets/pics</code> to show them
-                    here.
-                  </p>
-                )
-              }
-            </div>
-            <img
-              class="frame-overlay"
-              src={frameImage.src}
-              alt="Decorative picture frame"
-            />
-          </div>
-        </section>
-      </main>
-    </div>
-  </div>
 </Layout>
 
 <style>
-  .wallpaper {
+  :global(html),
+  :global(body) {
+    background: #fbfbfb;
+    color: #1f2933;
+  }
+
+  :global(a) {
+    color: #64c8d1;
+  }
+
+  :global(a:hover) {
+    color: #d16d64;
+  }
+
+  .note-shell {
     min-height: 100dvh;
-    background-image:
-      linear-gradient(
-        to bottom,
-        rgb(250 250 250 / 0.5),
-        rgb(250 250 250 / 0.45)
-      ),
-      var(--wallpaper-url);
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-  }
-
-  .page {
-    padding-top: 2rem;
-    padding-bottom: 3rem;
-  }
-
-  .top,
-  .sub-top,
-  .right,
-  .experience {
-    border: none;
-    border-radius: 16px;
-    box-shadow: none;
-    background: rgb(255 255 255 / 0.3);
-    backdrop-filter: blur(1px) saturate(95%);
-    -webkit-backdrop-filter: blur(1px) saturate(95%);
-  }
-
-  .top {
-    padding: 0.8rem 1rem;
-    margin-bottom: 0.75rem;
-  }
-
-  .top h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    line-height: 1.2;
-    margin-bottom: 0;
-  }
-
-  .sub-top {
     display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 0.8rem 1rem;
+    justify-content: center;
+    padding: 2rem 1rem 4rem;
+  }
+
+  .note {
+    width: min(100%, 860px);
+    padding: 0 0.5rem;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.7;
+  }
+
+  .note-header {
     margin-bottom: 2rem;
   }
 
-  .main {
+  .profile-links {
     display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-
-  .profile {
-    display: grid;
-    grid-template-columns: minmax(180px, 240px) 1fr;
-    gap: 1.5rem;
-    align-items: start;
-  }
-
-  .left img {
-    width: 100%;
-    height: auto;
-    border: 1px solid var(--border);
-    display: block;
-  }
-
-  .framed-gallery {
-    width: min(100%, 900px);
-    margin-inline: auto;
-  }
-
-  .photo-frame {
-    position: relative;
-    width: 100%;
-    aspect-ratio: var(--frame-width) / var(--frame-height);
-  }
-
-  .photo-window {
-    position: absolute;
-    left: calc(var(--inner-x) / var(--frame-width) * 100%);
-    top: calc(var(--inner-y) / var(--frame-height) * 100%);
-    width: calc(var(--inner-w) / var(--frame-width) * 100%);
-    height: calc(var(--inner-h) / var(--frame-height) * 100%);
-    overflow: hidden;
-    background: rgb(0 0 0 / 0.08);
-    z-index: 2;
-    cursor: pointer;
-    touch-action: none;
-    overscroll-behavior: contain;
-    --photo-padding: 12px;
-  }
-
-  .photo-slide {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-  }
-
-  .photo-slide.is-active {
-    opacity: 1;
-  }
-
-  .photo-slide img {
-    width: 100%;
-    height: 100%;
-    padding: var(--photo-padding);
-    box-sizing: border-box;
-    object-fit: contain;
-    display: block;
-    user-select: none;
-    -webkit-user-drag: none;
-  }
-
-  .empty-photos {
-    margin: auto;
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--text-muted);
-  }
-
-  .frame-overlay {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    pointer-events: none;
-    user-select: none;
-    z-index: 1;
-  }
-
-  .right h2,
-  .experience h2 {
-    font-size: 1.25rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .right,
-  .experience {
-    padding: 1rem;
-  }
-
-  .right p {
-    color: var(--text-muted);
-  }
-
-  .collab {
-    margin-top: 1rem;
-  }
-
-  .collab h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.35rem;
-  }
-
-  .experience ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .experience li {
-    border-top: none;
-    padding-top: 0.45rem;
-    line-height: 1.35;
-  }
-
-  .row {
-    display: flex;
-    justify-content: space-between;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    margin-bottom: 0.8rem;
   }
 
-  .org {
-    margin-top: 0.1rem;
-    font-size: 0.95rem;
-    color: var(--text-muted);
+  .profile-links a {
+    white-space: nowrap;
   }
 
-  .org-subtitle {
-    margin-top: 0.1rem;
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    font-style: italic;
+  .intro-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 
-  .experience p {
-    margin-top: 0.2rem;
+  .profile-photo {
+    width: 140px;
+    height: 140px;
+    border-radius: 8px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .intro-row .interests {
     margin-bottom: 0;
-    font-size: 0.95rem;
-    max-width: 65ch;
   }
 
-  @media (max-width: 700px) {
-    .profile {
-      grid-template-columns: 1fr;
+  @media (max-width: 520px) {
+    .intro-row {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
   }
 
+  h1,
+  h2 {
+    color: #0f172a;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 0.7rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin-top: 0;
+  }
+
+  section {
+    margin-top: 2rem;
+  }
+
+  p {
+    margin-bottom: 0.65rem;
+    color: #334155;
+  }
+
+  .entry-item ul {
+    padding-left: 1.3rem;
+    margin-top: 0.2rem;
+  }
+
+  .entry-item li {
+    margin-bottom: 0.3rem;
+    color: #334155;
+  }
+
+  .entry-list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .publications {
+    gap: 0.25rem;
+  }
+
+  .publications p {
+    margin-bottom: 0;
+  }
+
+  .entry-item {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 0 2rem;
+  }
+
+  .entry-date {
+    white-space: nowrap;
+    color: #64748b;
+    text-align: right;
+  }
+
+  .entry-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  .subline {
+    color: #64748b;
+    font-style: italic;
+  }
+
+  .heading-link {
+    font-size: 0.85rem;
+    font-weight: 400;
+  }
+
+  :global(.inline-icon) {
+    height: 1em;
+    width: auto;
+    vertical-align: middle;
+    display: inline;
+  }
+
 </style>
-
-<script>
-  const galleries = document.querySelectorAll("[data-gallery]");
-
-  galleries.forEach((gallery) => {
-    const slides = Array.from(gallery.querySelectorAll(".photo-slide"));
-    if (slides.length <= 1) return;
-
-    let current = 0;
-
-    const showSlide = (index) => {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle("is-active", i === index);
-      });
-      current = index;
-    };
-
-    const next = () => {
-      showSlide((current + 1) % slides.length);
-    };
-
-    const prev = () => {
-      showSlide((current - 1 + slides.length) % slides.length);
-    };
-
-    gallery.addEventListener("click", (event) => {
-      const rect = gallery.getBoundingClientRect();
-      const clickedLeftHalf = event.clientX - rect.left < rect.width / 2;
-      if (clickedLeftHalf) {
-        prev();
-      } else {
-        next();
-      }
-    });
-
-    gallery.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        next();
-      }
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        prev();
-      }
-    });
-
-    gallery.addEventListener("wheel", (event) => {
-      event.preventDefault();
-    });
-
-    gallery.addEventListener("touchmove", (event) => {
-      event.preventDefault();
-    });
-
-    gallery.addEventListener("dragstart", (event) => {
-      event.preventDefault();
-    });
-  });
-</script>

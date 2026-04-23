@@ -4,6 +4,10 @@ dist/
 .history/
 .DS_Store
 
+# Working image copies (originals live in public/)
+/pic.png
+/taking-pictures.png
+
 # Logs
 npm-debug.log*
 yarn-debug.log*
